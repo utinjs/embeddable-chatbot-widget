@@ -3,13 +3,17 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"deploy": "wrangler deploy",
-		"dev": "wrangler dev",
-		"start": "wrangler dev",
+		"deploy": "npm run build:css && wrangler deploy",
+		"build:css": "npx tailwindcss -i ./src/index.css -o ./public/styles.css --minify",
+		"dev": "npm run build:css && wrangler dev",
+		"start": "npm run build:css && wrangler dev",
 		"test": "vitest"
 	},
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "^0.12.4",
+		"autoprefixer": "^10.4.24",
+		"postcss": "^8.5.6",
+		"tailwindcss": "^3.4.19",
 		"vitest": "~3.2.0",
 		"wrangler": "^4.65.0"
 	}

@@ -8,11 +8,28 @@
 	"main": "src/index.js",
 	"compatibility_date": "2026-02-12",
 	"observability": {
-		"enabled": true
+		"enabled": true,
 	},
-	"compatibility_flags": [
-		"nodejs_compat"
-	]
+	"assets": {
+		"directory": "./public/",
+		"binding": "ASSETS",
+	},
+	"compatibility_flags": ["nodejs_compat"],
+	"ai": {
+		"binding": "AI",
+	},
+	"vectorize": [
+		{
+			"binding": "VECTORIZE",
+			"index_name": "faq-vectors",
+		},
+	],
+	"kv_namespaces": [
+		{
+			"binding": "CHAT_SESSIONS",
+			"id": "5d7d1a0160824a1ba4fe6011cb5c8a7c",
+		},
+	],
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
